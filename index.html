@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruv Kastwar — Aspiring Salesforce Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #64748b;
+      --accent: #0369a1;
+      --sidebar-bg: #ffffff;
+      --sidebar-text: #0f172a;
+      --sidebar-muted: #64748b;
+      --surface: #ffffff;
+      --rule: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.48;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    .resume {
+      max-width: 56rem;
+      margin: 1.5rem auto;
+      background: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .resume,
+    .resume * {
+      font-family: "DM Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .resume-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 1.85rem 1.25rem;
+      border-bottom: 3px solid var(--accent);
+      background: #ffffff;
+    }
+
+    .resume-top h1 {
+      margin: 0;
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .resume-top .tagline {
+      margin: 0.25rem 0 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .resume-top .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.15rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .resume-top .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .resume-body {
+      display: grid;
+      grid-template-columns: 13.5rem 1fr;
+      align-items: stretch;
+    }
+
+    @media (max-width: 640px) {
+      .resume-body {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        order: 2;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+      }
+      .main {
+        order: 1;
+      }
+    }
+
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 1.4rem 1.1rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      border-right: 1px solid var(--rule);
+    }
+
+    .sidebar h2 {
+      margin: 0 0 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sidebar-muted);
+    }
+
+    .sidebar p,
+    .sidebar li {
+      font-size: 0.88rem;
+      line-height: 1.48;
+      color: var(--sidebar-text);
+    }
+
+    .sidebar .muted {
+      color: var(--sidebar-muted);
+      font-size: 0.82rem;
+      margin-top: 0.2rem;
+    }
+
+    .sidebar ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidebar li {
+      position: relative;
+      padding-left: 0.65rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .sidebar li:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 3px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 1px;
+    }
+
+    .sidebar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .sidebar .cert-line {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar .cert-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar .cert-line .org {
+      display: block;
+      color: var(--sidebar-muted);
+      font-size: 0.78rem;
+      margin-top: 0.1rem;
+    }
+
+    .main {
+      padding: 1.4rem 1.65rem 1.5rem;
+    }
+
+    .main section {
+      margin-bottom: 1.2rem;
+    }
+
+    .main section:last-child {
+      margin-bottom: 0;
+    }
+
+    .main h2 {
+      margin: 0 0 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .summary {
+      font-size: 0.98rem;
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.52;
+    }
+
+    .skills-intro {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0 0 0.55rem;
+      line-height: 1.45;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem 1.1rem;
+    }
+
+    @media (max-width: 520px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .skill-card {
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.55rem 0.65rem;
+      background: #ffffff;
+    }
+
+    .skill-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    .skill-head {
+      margin: 0 0 0.28rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .skill-body {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--ink);
+      line-height: 1.46;
+    }
+
+    .skill-card ul {
+      margin: 0.35rem 0 0;
+      padding-left: 1.05rem;
+    }
+
+    .skill-card li {
+      margin-bottom: 0.25rem;
+      font-size: 0.84rem;
+      line-height: 1.42;
+    }
+
+    .skill-card li:last-child {
+      margin-bottom: 0;
+    }
+
+    .job {
+      margin-bottom: 1rem;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.25rem 0.75rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .company {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .job-title {
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .dates {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .main ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .main li {
+      margin-bottom: 0.35rem;
+      font-size: 0.92rem;
+      line-height: 1.48;
+    }
+
+    .main li:last-child {
+      margin-bottom: 0;
+    }
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.32in;
+      }
+
+      html,
+      body {
+        background: #ffffff !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      html {
+        font-size: 12pt;
+      }
+
+      body {
+        line-height: 1.48;
+        font-family: "DM Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif !important;
+      }
+
+      .resume,
+      .resume * {
+        font-family: "DM Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif !important;
+      }
+
+      .resume,
+      .resume-top,
+      .resume-body,
+      .sidebar,
+      .main,
+      .skill-card {
+        background: #ffffff !important;
+      }
+
+      .resume {
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        max-width: none !important;
+        width: 100% !important;
+        overflow: visible !important;
+      }
+
+      .resume-body {
+        display: grid;
+        align-items: stretch;
+        grid-template-columns: 12.5rem 1fr;
+      }
+
+      a {
+        color: var(--ink) !important;
+      }
+
+      .sidebar a {
+        color: var(--accent) !important;
+      }
+
+      .resume-top .contact-row a {
+        color: var(--ink) !important;
+      }
+
+      .sidebar {
+        padding: 1.25rem 1rem 1.35rem;
+        gap: 1.25rem;
+        border-right: 1px solid #e2e8f0 !important;
+      }
+
+      .resume-top {
+        padding: 1.2rem 1.35rem 1rem;
+        border-bottom-width: 3px;
+        background: #ffffff !important;
+      }
+
+      .resume-top h1 {
+        font-size: 1.75rem;
+      }
+
+      .resume-top .tagline {
+        font-size: 1.08rem;
+        margin-top: 0.2rem;
+      }
+
+      .resume-top .contact-row {
+        font-size: 0.92rem;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 0.45rem;
+      }
+
+      .sidebar p,
+      .sidebar li {
+        font-size: 0.9rem;
+        line-height: 1.48;
+      }
+
+      .sidebar .muted {
+        font-size: 0.84rem;
+      }
+
+      .sidebar li {
+        margin-bottom: 0.35rem;
+      }
+
+      .main {
+        padding: 1.25rem 1.35rem 1.4rem;
+      }
+
+      .main section {
+        margin-bottom: 1.15rem;
+      }
+
+      .main h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      .summary {
+        font-size: 1rem;
+        line-height: 1.52;
+      }
+
+      .skills-intro {
+        font-size: 0.86rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .skills-grid {
+        gap: 0.65rem 1rem;
+      }
+
+      .skill-card {
+        padding: 0.55rem 0.65rem;
+        border-color: #e2e8f0 !important;
+      }
+
+      .skill-head {
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .skill-body {
+        font-size: 0.9rem;
+        line-height: 1.45;
+      }
+
+      .skill-card li {
+        font-size: 0.88rem;
+      }
+
+      .job {
+        margin-bottom: 1rem;
+      }
+
+      .job-head {
+        margin-bottom: 0.32rem;
+      }
+
+      .company {
+        font-size: 1rem;
+      }
+
+      .job-title {
+        font-size: 0.94rem;
+      }
+
+      .dates {
+        font-size: 0.88rem;
+      }
+
+      .main li {
+        font-size: 0.94rem;
+        line-height: 1.48;
+        margin-bottom: 0.32rem;
+      }
+
+      /* Two-page print: avoid orphaned headings and split mid-card / mid-project */
+      .resume-top {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .sidebar > div {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .main h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .skill-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .job {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .main .summary {
+        orphans: 3;
+        widows: 3;
+      }
+
+      .main li {
+        orphans: 2;
+        widows: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <header class="resume-top">
+      <div>
+        <h1>Dhruv Kastwar</h1>
+        <p class="tagline">Aspiring Salesforce Developer</p>
+      </div>
+      <div class="contact-row">
+        <span>Bhopal, Madhya Pradesh, India</span>
+        <span><a href="mailto:dhruvkastwar727@gmail.com">dhruvkastwar727@gmail.com</a></span>
+        <span><a href="https://linkedin.com/in/dhruvkastwar74">LinkedIn</a></span>
+      </div>
+    </header>
+
+    <div class="resume-body">
+      <aside class="sidebar">
+        <div>
+          <h2>Education</h2>
+          <p style="margin: 0; font-weight: 600;">Bachelor of Computer Science</p>
+          <p class="muted" style="margin: 0;">LNCT University, Bhopal, Madhya Pradesh</p>
+          <p class="muted" style="margin: 0.35rem 0 0;">2023 – 2027</p>
+        </div>
+
+        <div>
+          <h2>Achievements &amp; certifications</h2>
+          <p class="cert-line">
+            Salesforce Certified Platform Developer
+            <span class="org">Trailhead · 2026</span>
+          </p>
+          <p class="cert-line">
+            Salesforce Certified Agentforce Specialist
+            <span class="org">Trailhead · 2025</span>
+          </p>
+          <p class="cert-line">
+            Java Full-Stack Developer
+            <span class="org">EduSkills Academy · 2025</span>
+          </p>
+          <p class="cert-line">
+            English for IT 2
+            <span class="org">Cisco NetAcad · 2025</span>
+          </p>
+        </div>
+
+        <div>
+          <h2>Languages</h2>
+          <p style="margin: 0;">English</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section>
+          <h2>Summary</h2>
+          <p class="summary">
+            Aspiring Salesforce Developer and B.Tech Computer Science student with hands-on experience in Salesforce
+            configuration, automation, and development. Certified Salesforce Platform Developer and Agentforce Specialist,
+            with expertise in Flows, reports, dashboards, LWC, Apex, and SOQL. Experienced in CRM data management,
+            troubleshooting, and building scalable solutions, including an Airline Management System. Proficient in Java,
+            Spring Boot, REST APIs, and web technologies, with strong foundations in OOP, DBMS, and problem-solving.
+          </p>
+        </section>
+
+        <section>
+          <h2>Relevant skills</h2>
+          <p class="skills-intro">
+            Salesforce platform skills aligned with certification prep; full-stack and tooling experience from coursework and projects.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-card wide">
+              <p class="skill-head">Salesforce</p>
+              <ul>
+                <li>Configuration &amp; customization (objects, page layouts, validation rules)</li>
+                <li>Automation using Flows, reports, and dashboards</li>
+                <li>CRM data management, migration, and data quality</li>
+                <li>Troubleshooting, testing, and optimization</li>
+                <li>Lightning Web Components (LWC), Apex, and SOQL</li>
+              </ul>
+            </div>
+            <div class="skill-card">
+              <p class="skill-head">Languages &amp; data</p>
+              <p class="skill-body">
+                Java · HTML · CSS · JavaScript · SQL · MongoDB
+              </p>
+            </div>
+            <div class="skill-card">
+              <p class="skill-head">Frameworks &amp; APIs</p>
+              <p class="skill-body">
+                Maven · Spring Boot · REST APIs · Bootstrap
+              </p>
+            </div>
+            <div class="skill-card">
+              <p class="skill-head">Tools &amp; foundations</p>
+              <p class="skill-body">
+                Git · GitHub · VS Code · IntelliJ IDEA · Eclipse
+              </p>
+              <p class="skill-body" style="margin-top: 0.35rem;">
+                OOP · DBMS · DSA
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Projects &amp; experience</h2>
+
+          <article class="job">
+            <div class="job-head">
+              <div>
+                <span class="company">E-Commerce Platform</span>
+                <span class="job-title"> · Academic project</span>
+              </div>
+              <span class="dates">Jul 2025</span>
+            </div>
+            <ul>
+              <li>Built the backend using Spring Boot and a relational database.</li>
+              <li>Enabled real-time ordering and admin item management.</li>
+              <li>Contributed to the frontend using HTML, CSS, JavaScript, and Bootstrap.</li>
+              <li>Ensured seamless communication between the UI and the backend.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <div>
+                <span class="company">Airline Management System</span>
+                <span class="job-title"> · Salesforce project</span>
+              </div>
+            </div>
+            <ul>
+              <li>Designed a Salesforce app using custom objects (Flight, Flight Schedule, Pilot, Pilot Schedule).</li>
+              <li>Implemented validation rules, formula fields, Process Builder automation, and email alerts.</li>
+              <li>Automated the flight lifecycle with email notifications to pilots.</li>
+              <li>Created dashboards and reports for real-time operational insights.</li>
+              <li>Configured role hierarchy, sharing rules, and permissions.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script>
+    window.addEventListener("beforeprint", function () {
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {});
+      }
+    });
+  </script>
+</body>
+</html>
